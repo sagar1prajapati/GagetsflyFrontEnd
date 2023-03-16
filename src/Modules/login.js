@@ -33,7 +33,7 @@ const Login = () => {
           <form onSubmit={handleLoginFormSubmit}>
             <div className="mb-3">
               <label htmlFor="mobileNumber" className="form-label">Mobile Number</label>
-              <input type="tel" className={`form-control ${isMobileNumberValid ? "is-valid" : "is-invalid"}`} id="mobileNumber" placeholder="Enter Indian mobile number (10 digits)" value={mobileNumber} onChange={handleMobileNumberChange} required />
+              <input type="tel" className={`form-control ${isMobileNumberValid ? "is-valid" : "is-invalid"}`} id="mobileNumber" placeholder="Enter mobile number" value={mobileNumber} onChange={handleMobileNumberChange} required />
               {isMobileNumberValid ? (
                 <div className="valid-feedback">Looks good!</div>
               ) : (

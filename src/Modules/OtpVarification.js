@@ -29,7 +29,7 @@ const OtpVarification = () => {
     <div className="d-flex justify-content-center align-items-center min-vh-100" style={{backgroundImage : 'linear-gradient(to right, #8e2de2, #4a00e0)'}}>
       <div className="card p-4">
         <h1 className="text-center mb-4">Verify OTP</h1>
-        <p className="text-center">Please enter the OTP sent to your mobile number ending in <strong>1234</strong></p>
+        {/* <p className="text-center">Please enter the OTP sent to your mobile number ending in <strong>1234</strong></p> */}
         <div className="card-body">
           <form onSubmit={handleVerifyOtpFormSubmit}>
             <div className="mb-3">

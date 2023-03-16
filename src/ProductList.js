@@ -134,9 +134,9 @@ function ProductList() {
       </div>
     </div> */}
 
-    <footer class="pt-3 mt-4 text-muted border-top">
+    {/* <footer class="pt-3 mt-4 text-muted border-top">
       &copy; 2022
-    </footer>
+    </footer> */}
   </div>
 </main>
 
@@ -302,19 +302,26 @@ function ProductList() {
 
     <section class="padding-y">
     <div class="container">
-    <div class="card col-lg-3">
-        <img src="assets/images/items/10.webp" class="card-img-top img-fluid" alt="Product Image"/>
-        <div class="card-body">
-            <h5 class="card-title">Product Name</h5>
-            <p class="card-text">Product Description</p>
-            <ul class="list-group list-group-flush">
-            <li class="list-group-item">Price: $XX.XX</li>
-            <li class="list-group-item">Availability: In Stock</li>
-            </ul>
-            <a href="#" class="btn btn-primary">Buy Now</a>
-            <a href="#" class="btn btn-primary">View Detail</a>
+      <div>
+        <h4>top Selling products</h4>
+      </div>
+      <article class="product-card col-lg-3">
+    <figure>
+        <img src="assets/images/items/10.webp" class="product-image img-fluid" alt="Product Image"/>
+    </figure>
+    <section class="product-details">
+        <h2 class="product-title">Product Name</h2>
+        <p class="product-description">Product Description</p>
+        <ul class="product-info">
+            <li>Price: $XX.XX</li>
+            <li>Availability: In Stock</li>
+        </ul>
+        <div class="product-actions">
+            <a href="#" class="btn btn-primary btn-buy">Buy Now</a>
+            <a href="#" class="btn btn-outline-primary btn-detail">View Detail</a>
         </div>
-        </div>
+    </section>
+</article>
     </div> 
     </section>                    
     </div>
