@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {useNavigate} from 'react-router-dom';
+import {UpdateCustomerOTP} from '../API/LoginService';
 
 const Login = () => {
   const [mobileNumber, setMobileNumber] = useState("");
@@ -18,11 +19,19 @@ const Login = () => {
     }
   };
 
-  const handleLoginFormSubmit = (event) => {
+  const handleLoginFormSubmit = async (event) => {
     event.preventDefault();
-    console.log("Submitted mobile number:", mobileNumber);
-    navigate('/OtpVarification');
+    debugger;
     // Send the mobile number to your server for verification here
+    const response = await UpdateCustomerOTP(mobileNumber);
+    // alert(response);
+    if (response.includes('Redirect to Otp Page')) {
+      navigate('/OtpVarification');
+    }else if("Invalid phone number"){
+      alert(response);
+    }else{
+      alert(response);
+    } 
   };
 
   return (

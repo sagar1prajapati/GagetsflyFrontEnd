@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {useNavigate} from 'react-router-dom';
+import {CheckOTP} from '../API/LoginService';
 
 const OtpVarification = () => {
   const [otp, setOtp] = useState("");
@@ -17,12 +18,18 @@ const OtpVarification = () => {
       setIsOtpValid(false);
     }
   };
-
-  const handleVerifyOtpFormSubmit = (event) => {
-    event.preventDefault();
-    console.log("Submitted OTP:", otp);
-    navigate('/HomePage');
     // Send the OTP to your server for verification here
+  const handleVerifyOtpFormSubmit = async(event) => {
+    event.preventDefault();
+    debugger;
+    const response = await CheckOTP('9665272717',otp);
+    if(response === 'User not found.' || response === 'Invalid OTP.'){
+      alert(response);
+    }else{
+      sessionStorage.setItem('token', response);
+      console.log("Submitted OTP:", otp);
+      navigate('/HomePage');
+    }
   };
 
   return (
