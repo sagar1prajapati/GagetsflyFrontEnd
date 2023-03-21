@@ -26,7 +26,8 @@ const Login = () => {
     const response = await UpdateCustomerOTP(mobileNumber);
     // alert(response);
     if (response.includes('Redirect to Otp Page')) {
-      navigate('/OtpVarification');
+       navigate(`/OtpVarification/${mobileNumber}`);
+      // navigate('/OtpVarification/123');
     }else if("Invalid phone number"){
       alert(response);
     }else{

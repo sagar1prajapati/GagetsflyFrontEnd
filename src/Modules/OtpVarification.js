@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import {useNavigate} from 'react-router-dom';
 import {CheckOTP} from '../API/LoginService';
+import { useParams } from 'react-router-dom';
 
 const OtpVarification = () => {
   const [otp, setOtp] = useState("");
   const [isOtpValid, setIsOtpValid] = useState(false);
   const navigate = useNavigate();
+
+  const { mobileNumber } = useParams();
 
   const handleOtpChange = (event) => {
     const value = event.target.value;
@@ -22,7 +25,7 @@ const OtpVarification = () => {
   const handleVerifyOtpFormSubmit = async(event) => {
     event.preventDefault();
     debugger;
-    const response = await CheckOTP('9665272717',otp);
+    const response = await CheckOTP(mobileNumber,otp);
     if(response === 'User not found.' || response === 'Invalid OTP.'){
       alert(response);
     }else{

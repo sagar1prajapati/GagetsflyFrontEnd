@@ -5,7 +5,7 @@ import ProductList from '../ProductList';
 function HomePage() {
   return (
     <div className="App">
-      <Header></Header>
+      {/* <Header></Header> */}
       <ProductList></ProductList><br/>         
       <Footer></Footer>
     </div>
