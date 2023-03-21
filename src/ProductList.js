@@ -140,17 +140,17 @@ function ProductList() {
             <div class="container py-4">
               <div className="row">
               <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="1000">
-                <img src="https://via.placeholder.com/1263x383.png?text=Bootstrap+Carousel+Image" class="d-block w-100" alt="..."/>
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="1000">
+                  <img src="https://via.placeholder.com/1263x383.png?text=Top+Advertisement+Banner1" class="d-block w-100" alt="..."/>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                  <img src="https://via.placeholder.com/1263x383.png?text=Top+Advertisement+Banner1" class="d-block w-100" alt="..."/>
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                  <img src="https://via.placeholder.com/1263x383.png?text=Top+Advertisement+Banner1" class="d-block w-100" alt="..."/>
+                </div>
               </div>
-              <div class="carousel-item" data-bs-interval="2000">
-                <img src="https://via.placeholder.com/1263x383.png?text=Bootstrap+Carousel+Image" class="d-block w-100" alt="..."/>
-              </div>
-              <div class="carousel-item" data-bs-interval="3000">
-                <img src="https://via.placeholder.com/1263x383.png?text=Bootstrap+Carousel+Image" class="d-block w-100" alt="..."/>
-              </div>
-            </div>
           </div>
           </div>
           <br/>
@@ -192,10 +192,12 @@ function ProductList() {
               <br/>
           <br/>
               <div class="p-5 mb-4 bg-light rounded-3">
-                <div class="container-fluid py-5">
-                  <h1 class="display-5 fw-bold">Custom jumbotron</h1>
-                  <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
-                  <button class="btn btn-primary btn-lg" type="button">Example button</button>
+                <div class="container-fluid py-5 text-center">
+                  <h1>Welcome to our online store</h1>
+                  <p>Discover our wide range of products and find the perfect one for you!</p>
+                  <p>From clothing to electronics, we have everything you need at competitive prices.</p>
+                  <p>Shop now and take advantage of our limited time offer - free shipping on all orders!</p>
+                  <a class="btn btn-success btn-lg" href="/shop" role="button">Shop now</a>
                 </div>
               </div>
 

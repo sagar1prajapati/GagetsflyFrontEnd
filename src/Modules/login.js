@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import {useNavigate} from 'react-router-dom';
 import {UpdateCustomerOTP} from '../API/LoginService';
+import Swal from "sweetalert2";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 const Login = () => {
   const [mobileNumber, setMobileNumber] = useState("");
   const [isMobileNumberValid, setIsMobileNumberValid] = useState(false);
   const navigate = useNavigate();
+
+
+
 
   const handleMobileNumberChange = (event) => {
     const value = event.target.value;
@@ -27,11 +32,20 @@ const Login = () => {
     // alert(response);
     if (response.includes('Redirect to Otp Page')) {
        navigate(`/OtpVarification/${mobileNumber}`);
-      // navigate('/OtpVarification/123');
     }else if("Invalid phone number"){
-      alert(response);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: response,
+        footer: ''
+      })
     }else{
-      alert(response);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: response,
+        footer: ''
+      })
     } 
   };
 

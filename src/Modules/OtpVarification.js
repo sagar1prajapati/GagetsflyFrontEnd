@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {useNavigate} from 'react-router-dom';
 import {CheckOTP} from '../API/LoginService';
 import { useParams } from 'react-router-dom';
+import Swal from "sweetalert2";
 
 const OtpVarification = () => {
   const [otp, setOtp] = useState("");
@@ -27,10 +28,16 @@ const OtpVarification = () => {
     debugger;
     const response = await CheckOTP(mobileNumber,otp);
     if(response === 'User not found.' || response === 'Invalid OTP.'){
-      alert(response);
+      // Swal.fire(response)
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: response,
+        footer: ''
+      })
     }else{
       sessionStorage.setItem('token', response);
-      console.log("Submitted OTP:", otp);
+      // console.log("Submitted OTP:", otp);
       navigate('/HomePage');
     }
   };
