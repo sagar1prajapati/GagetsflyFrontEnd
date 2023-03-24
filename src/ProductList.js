@@ -1,5 +1,6 @@
 import {useNavigate} from 'react-router-dom';
 import ProductListShow from './Modules/ProductListShow';
+import ProductFilterAndDisplay from './Modules/ProductFilterAndDisplay';
 
 function ProductList() {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ function ProductList() {
             <div class="container">
                 <div class="row gy-3 align-items-center">
                 <div class="col-lg-2 col-sm-4 col-4">
-                    <a href="http://therichpost.com" class="navbar-brand">
+                    <a class="navbar-brand">
                     Gedgetsfly
                     </a> 
                 </div>
@@ -43,16 +44,11 @@ function ProductList() {
                 </div> 
             </div> 
             </section> 
-        
-
-
-        
             <nav class="navbar navbar-light  navbar-expand-lg" style={{backgroundColor :'#ff6900'}}>
             <div class="container">
                 <button class="navbar-toggler border" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_main">
                 <span class="navbar-toggler-icon"></span>
                 </button>
-                
                 <div class="collapse navbar-collapse" style={{backgroundColor: "#ff6900", color : 'white' , hover : 'white', }} id="navbar_main">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -68,8 +64,6 @@ function ProductList() {
                         <li> <a class="dropdown-item" href="#">Submenu three</a> </li>
                     </ul>
                     </li>
-
-
                     <li class="nav-item dropdown">
                     <a class="dropdown-toggle nav-link" href="#" data-bs-toggle="dropdown">
                         <i class="fa-solid fa-battery-full"></i> Laptop Batteries
@@ -200,8 +194,6 @@ function ProductList() {
                   <a class="btn btn-success btn-lg" href="/shop" role="button">Shop now</a>
                 </div>
               </div>
-
-
               <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
               <div class="col">
                   <div class="card mb-4 rounded-3 shadow-sm">
@@ -237,17 +229,20 @@ function ProductList() {
                   </div>
                 </div>
               </div>
-
-
-
             </div>
           </main>
         <section class="padding-y">
           <div class="container">
-            <div>
+             {/* <div>
+              <h4>top Selling products</h4>
+            </div> */}
+            <ProductFilterAndDisplay></ProductFilterAndDisplay>
+
+
+            {/* <div>
               <h4>top Selling products</h4>
             </div>
-            <ProductListShow></ProductListShow>
+            <ProductListShow></ProductListShow> */}
           </div> 
         </section>                    
       </div>

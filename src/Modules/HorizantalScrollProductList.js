@@ -1,91 +1,83 @@
-import React, { useState } from "react";
+import { useState, useEffect } from 'react';
 
-function HorizantalScrollProductList() {
-  const [products, setProducts] = useState([
-    { id: 1, name: "Product 1", price: 10 },
-    { id: 2, name: "Product 2", price: 20 },
-    { id: 3, name: "Product 3", price: 30 },
-  ]);
+const PAGE_SIZE = 10;
 
-  const [cartItems, setCartItems] = useState([]);
+const HorizantalScrollProductList = () => {
+  const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
 
-  const addToCart = (product) => {
-    const index = cartItems.findIndex((item) => item.id === product.id);
+  useEffect(() => {
+    fetchProducts();
+  }, [currentPage]);
 
-    if (index !== -1) {
-      const updatedCart = [...cartItems];
-      updatedCart[index].quantity += 1;
-      setCartItems(updatedCart);
-    } else {
-      setCartItems([...cartItems, { ...product, quantity: 1 }]);
-    }
+  const fetchProducts = async () => {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=${PAGE_SIZE}&_page=${currentPage}`);
+    const data = await response.json();
+    setProducts(data);
+    setIsLoading(false);
+    setTotalPages(Math.ceil(response.headers.get('x-total-count') / PAGE_SIZE));
   };
 
-  const increaseQuantity = (id) => {
-    const updatedCart = [...cartItems];
-    const index = updatedCart.findIndex((item) => item.id === id);
-
-    updatedCart[index].quantity += 1;
-    setCartItems(updatedCart);
+  const handlePrevClick = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
   };
 
-  const decreaseQuantity = (id) => {
-    const updatedCart = [...cartItems];
-    const index = updatedCart.findIndex((item) => item.id === id);
-
-    if (updatedCart[index].quantity > 1) {
-      updatedCart[index].quantity -= 1;
-      setCartItems(updatedCart);
-    } else {
-      removeItem(id);
-    }
+  const handleNextClick = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
   };
 
-  const removeItem = (id) => {
-    const updatedCart = cartItems.filter((item) => item.id !== id);
-    setCartItems(updatedCart);
+  const handleAddToCartClick = (product) => {
+    console.log(`Added ${product.title} to cart!`);
   };
 
-  const getTotalPrice = () => {
-    return cartItems.reduce((total, item) => {
-      return total + item.price * item.quantity;
-    }, 0);
-  };
-
-  const getCartItemCount = () => {
-    return cartItems.reduce((total, item) => {
-      return total + item.quantity;
-    }, 0);
+  const handleViewDetailsClick = (product) => {
+    console.log(`Viewing details for ${product.title}`);
   };
 
   return (
     <div>
-      <h1>Products</h1>
-      <ul>
-        {products.map((product) => (
-          <li key={product.id}>
-            {product.name} - ${product.price}{" "}
-            <button onClick={() => addToCart(product)}>Add to cart</button>
-          </li>
-        ))}
-      </ul>
-      <button>
-        Cart ({getCartItemCount()})
-      </button>
-      <h1>Cart</h1>
-      <ul>
-        {cartItems.map((item) => (
-          <li key={item.id}>
-            {item.name} - ${item.price} - Quantity: {item.quantity}{" "}
-            <button onClick={() => increaseQuantity(item.id)}>+</button>
-            <button onClick={() => decreaseQuantity(item.id)}>-</button>
-            <button onClick={() => removeItem(item.id)}>Remove</button>
-          </li>
-        ))}
-      </ul>
-      <h2>Total Price: ${getTotalPrice()}</h2>
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <div>
+          <div className="row">
+            {products.map((product) => (
+              <div className="col-4 mb-4" key={product.id}>
+                <div className="card">
+                  <img src={`https://picsum.photos/id/${product.id + 10}/200`} alt={product.title} className="card-img-top" />
+                  <div className="card-body">
+                    <h5 className="card-title">{product.title}</h5>
+                    <p className="card-text">{product.body}</p>
+                    <p className="card-text"><strong>Price:</strong> $15.99</p>
+                    <p className="card-text"><strong>Discount:</strong> 10%</p>
+                    <div className="d-grid gap-2">
+                      <button className="btn btn-primary" onClick={() => handleAddToCartClick(product)}>Add to Cart</button>
+                      <button className="btn btn-link" onClick={() => handleViewDetailsClick(product)}>View Details</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div>
+            <button disabled={currentPage === 1} onClick={handlePrevClick}>
+              Prev
+            </button>
+            <span className="mx-2">
+              Page {currentPage} of {totalPages}
+            </span>
+            <button disabled={products.length < PAGE_SIZE} onClick={handleNextClick}>
+              Next
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
-}
+};
 
 export default HorizantalScrollProductList;
+
+
