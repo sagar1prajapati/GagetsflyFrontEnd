@@ -8,6 +8,9 @@ import RegisterForm from "./../Modules/RegisterForm";
 import ProductListShow from "./../Modules/ProductListShow";
 import HorizantalScrollProductList from "./../Modules/HorizantalScrollProductList";
 import ProductFilterAndDisplay from "./../Modules/ProductFilterAndDisplay";
+import SearchBar from "./../Modules/SearchBar";
+import InsertProductForm from "./../Modules/InsertProductForm";
+import ProductCategoryMaster from "./../Modules/ProductCategoryMaster";
 import PrivateRoutes from "./PrivateRoutes";
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
@@ -28,6 +31,9 @@ function RouterRegistry() {
         <Route path='/ProductListShow' element={<ProductListShow/>}/>
         <Route path='/HorizantalScrollProductList' element={<HorizantalScrollProductList/>}/>
         <Route path='/ProductFilterAndDisplay' element={<ProductFilterAndDisplay/>}/>
+        <Route path='/SearchBar' element={<SearchBar/>}/>
+        <Route path='/InsertProductForm' element={<InsertProductForm/>}/>
+        <Route path='/ProductCategoryMaster' element={<ProductCategoryMaster/>}/>
         
         </Routes>
   </Router>

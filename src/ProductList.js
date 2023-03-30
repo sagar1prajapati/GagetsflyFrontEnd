@@ -1,12 +1,20 @@
 import {useNavigate} from 'react-router-dom';
 import ProductListShow from './Modules/ProductListShow';
 import ProductFilterAndDisplay from './Modules/ProductFilterAndDisplay';
+import ProductCategories from './Modules/ProductCategories';
 
 function ProductList() {
   const navigate = useNavigate();
 
     return (
       <div>
+        <div className="row justify-content-center">
+         <div className='row'>
+            <div className="bg-dark text-white p-1 text-center">
+              <h6 className="mb-0 text-white"><i class="fa fa-id-card" aria-hidden="true"></i> 100% Secure | <span><i class="fa fa-check" aria-hidden="true"></i></span> Genuine Spares | <span><i class="fa fa-refresh" aria-hidden="true"></i></span> 30 days moneyback</h6>
+            </div>
+         </div>
+        </div>
         <header class="section-header sticky-top" style={{backgroundColor : 'white'}}>  
             <section class="header-main">
             <div class="container">
@@ -58,71 +66,68 @@ function ProductList() {
                     <a class="dropdown-toggle nav-link" href="#" data-bs-toggle="dropdown">
                         <i class="fa-solid fa-plug"></i> Adapters
                     </a>
-                    <ul class="dropdown-menu">
-                        <li> <a class="dropdown-item" href="#">Submenu one </a> </li>
-                        <li> <a class="dropdown-item" href="#">Submenu two</a> </li>
-                        <li> <a class="dropdown-item" href="#">Submenu three</a> </li>
-                    </ul>
+                      <ul class="dropdown-menu"  style={{backgroundColor: "#ff6900", color : 'white' , hover : 'white', }}>
+                        <li> <a class="dropdown-item" href="#">DELL Laptop Adapter</a> </li>
+                        <li> <a class="dropdown-item" href="#">HP Laptop Adapter</a> </li>
+                        <li> <a class="dropdown-item" href="#">Lenovo Laptop Adapter</a> </li>
+                        <li> <a class="dropdown-item" href="#">Apple Laptop Adapter</a> </li>
+                        <li> <a class="dropdown-item" href="#">Asus Laptop Adapter</a> </li>
+                      </ul>
                     </li>
                     <li class="nav-item dropdown">
                     <a class="dropdown-toggle nav-link" href="#" data-bs-toggle="dropdown">
                         <i class="fa-solid fa-battery-full"></i> Laptop Batteries
                     </a>
-                    <ul class="dropdown-menu">
-                        <li> <a class="dropdown-item" href="#">Submenu one </a> </li>
-                        <li> <a class="dropdown-item" href="#">Submenu two</a> </li>
-                        <li> <a class="dropdown-item" href="#">Submenu three</a> </li>
-                    </ul>
+                      <ul class="dropdown-menu"  style={{backgroundColor: "#ff6900", color : 'white' , hover : 'white', }}>
+                        <li> <a class="dropdown-item" href="#">DELL Laptop Batteries</a> </li>
+                        <li> <a class="dropdown-item" href="#">HP Laptop Batteries</a> </li>
+                        <li> <a class="dropdown-item" href="#">Lenovo Laptop Batteries</a> </li>
+                        <li> <a class="dropdown-item" href="#">Apple Laptop Batteries</a> </li>
+                        <li> <a class="dropdown-item" href="#">Asus Laptop Batteries</a> </li>
+                      </ul>
                     </li>
                     <li class="nav-item dropdown">
                     <a class="dropdown-toggle nav-link" href="#" data-bs-toggle="dropdown">
                         <i class="fa-solid fa-keyboard"></i> Keyboards
                     </a>
-                    <ul class="dropdown-menu">
-                        <li> <a class="dropdown-item" href="#">Submenu one </a> </li>
-                        <li> <a class="dropdown-item" href="#">Submenu two</a> </li>
-                        <li> <a class="dropdown-item" href="#">Submenu three</a> </li>
+                    <ul class="dropdown-menu"  style={{backgroundColor: "#ff6900", color : 'white' , hover : 'white', }}>
+                        <li> <a class="dropdown-item" href="#">DELL Laptop Keyboards</a> </li>
+                        <li> <a class="dropdown-item" href="#">HP Laptop Keyboards</a> </li>
+                        <li> <a class="dropdown-item" href="#">Lenovo Laptop Keyboards</a> </li>
+                        <li> <a class="dropdown-item" href="#">Apple Laptop Keyboards</a> </li>
+                        <li> <a class="dropdown-item" href="#">Asus Laptop Keyboards</a> </li>
                     </ul>
                     </li>
                     <li class="nav-item dropdown">
                     <a class="dropdown-toggle nav-link" href="#" data-bs-toggle="dropdown">
                         <i class="fa-solid fa-display"></i> Screens
                     </a>
-                    <ul class="dropdown-menu">
-                        <li> <a class="dropdown-item" href="#">Submenu one </a> </li>
-                        <li> <a class="dropdown-item" href="#">Submenu two</a> </li>
-                        <li> <a class="dropdown-item" href="#">Submenu three</a> </li>
+                    <ul class="dropdown-menu"  style={{backgroundColor: "#ff6900", color : 'white' , hover : 'white', }}>
+                        <li> <a class="dropdown-item" href="#">DELL Laptop Screens</a> </li>
+                        <li> <a class="dropdown-item" href="#">HP Laptop Screens</a> </li>
+                        <li> <a class="dropdown-item" href="#">Lenovo Laptop Screens</a> </li>
+                        <li> <a class="dropdown-item" href="#">Apple Laptop Screens</a> </li>
+                        <li> <a class="dropdown-item" href="#">Asus Laptop Screens</a> </li>
                     </ul>
                     </li>
                     <li class="nav-item dropdown">
                     <a class="dropdown-toggle nav-link" href="#" data-bs-toggle="dropdown">
                         <i class="fa-solid fa-laptop"></i> Laptop parts
                     </a>
-                    <ul class="dropdown-menu">
-                        <li> <a class="dropdown-item" href="#">Submenu one </a> </li>
-                        <li> <a class="dropdown-item" href="#">Submenu two</a> </li>
-                        <li> <a class="dropdown-item" href="#">Submenu three</a> </li>
+                    <ul class="dropdown-menu" style={{backgroundColor: "#ff6900", color : 'white' , hover : 'white', }}>
+                        <li> <a class="dropdown-item" href="#">SSD/HDD</a> </li>
+                        <li> <a class="dropdown-item" href="#">Memory</a> </li>
                     </ul>
                     </li>
                     <li class="nav-item dropdown">
                     <a class="dropdown-toggle nav-link" href="#" data-bs-toggle="dropdown">
                         Laptop Case
                     </a>
-                    <ul class="dropdown-menu">
-                        <li> <a class="dropdown-item" href="#">Submenu one </a> </li>
-                        <li> <a class="dropdown-item" href="#">Submenu two</a> </li>
-                        <li> <a class="dropdown-item" href="#">Submenu three</a> </li>
-                    </ul>
                     </li>
                     <li class="nav-item dropdown">
                     <a class="dropdown-toggle nav-link" href="#" data-bs-toggle="dropdown">
                         <i class="fa-solid fa-bolt"></i> Lightning Deals
                     </a>
-                    <ul class="dropdown-menu">
-                        <li> <a class="dropdown-item" href="#">Submenu one </a> </li>
-                        <li> <a class="dropdown-item" href="#">Submenu two</a> </li>
-                        <li> <a class="dropdown-item" href="#">Submenu three</a> </li>
-                    </ul>
                     </li>
                 </ul>
                 </div> 
@@ -130,112 +135,14 @@ function ProductList() {
             </nav> 
         </header> 
         <div className="home-section">  
-          <main>
-            <div class="container py-4">
-              <div className="row">
-              <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="1000">
-                  <img src="https://via.placeholder.com/1263x383.png?text=Top+Advertisement+Banner1" class="d-block w-100" alt="..."/>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                  <img src="https://via.placeholder.com/1263x383.png?text=Top+Advertisement+Banner1" class="d-block w-100" alt="..."/>
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                  <img src="https://via.placeholder.com/1263x383.png?text=Top+Advertisement+Banner1" class="d-block w-100" alt="..."/>
-                </div>
-              </div>
-          </div>
-          </div>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-              <div className="row">
-                  <div className="col-md-3 col-sm-12 col-xs-12">
-                    <div className="text-center">
-                    <i class="fa-solid fa-battery-three-quarters fa-5x"></i>
-                      {/* <img src="https://via.placeholder.com/150" alt="Image 1" className="img-fluid mb-3" /> */}
-                      <h6>Laptop Battery</h6>
-                      <p>Empower your laptop with our premium quality batteries for long lasting usage</p>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="text-center">
-                      <i class="fa-solid fa-plug-circle-bolt fa-5x"></i>
-                      <h6 >Laptop Charger</h6>
-                      <p>Avoid risk of using local charger. Use our premium quality charger perfect for your laptop</p>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="text-center">
-                          <i class="fa-regular fa-keyboard fa-5x"></i>
-                      <h6>Laptop keyboard</h6>
-                      <p>Get going, do not stop your work, replace your faulty keyboard with our premium quality laptop keyboards.</p>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="text-center">
-                      <i class="fa-solid fa-display fa-5x"></i>
-                      {/* <img src="https://via.placeholder.com/150" alt="Image 4" className="img-fluid mb-3" /> */}
-                      <h6>Laptop Screen</h6>
-                      <p>Revive your memories, replace your broken laptop screen with our A+ grade screens.</p>
-                    </div>
-                  </div>
-              </div>
-              <br/>
-          <br/>
-              <div class="p-5 mb-4 bg-light rounded-3">
-                <div class="container-fluid py-5 text-center">
-                  <h1>Welcome to our online store</h1>
-                  <p>Discover our wide range of products and find the perfect one for you!</p>
-                  <p>From clothing to electronics, we have everything you need at competitive prices.</p>
-                  <p>Shop now and take advantage of our limited time offer - free shipping on all orders!</p>
-                  <a class="btn btn-success btn-lg" href="/shop" role="button">Shop now</a>
-                </div>
-              </div>
-              <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-              <div class="col">
-                  <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-body">
-                    <div className="text-center">
-                      <img src="https://via.placeholder.com/150" alt="Image 1" className="img-fluid mb-3" />
-                      <p>Buy with confidence you get 10 days free returns and 30 days moneyback guarantee in our products </p>
-                    </div>
-                    <button type="button" class="w-100 btn btn-lg btn-outline-success">Easy Returns</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-body">
-                    <div className="text-center">
-                      <img src="https://via.placeholder.com/150" alt="Image 1" className="img-fluid mb-3" />
-                      <p>Buying on lapgadgets.in is very simple and safe, you are protected by Razorpay - India's leading payment gateway </p>
-                    </div>
-                    <button type="button" class="w-100 btn btn-lg btn-outline-success">Secured Transaction</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-body">
-                    <div className="text-center">
-                      <img src="https://via.placeholder.com/150" alt="Image 1" className="img-fluid mb-3" />
-                      <p>Consult our experts, avoid the risk of laptop failure and other damage du to wrong part purchase.  </p>
-                    </div>
-                    <button type="button" class="w-100 btn btn-lg btn-outline-success">Expert's Advice</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </main>
-        <section class="padding-y">
+        <ProductCategories></ProductCategories>
+        {/* <section class="padding-y"> */}
           <div class="container">
              {/* <div>
               <h4>top Selling products</h4>
             </div> */}
+
+
             <ProductFilterAndDisplay></ProductFilterAndDisplay>
 
 
@@ -244,7 +151,29 @@ function ProductList() {
             </div>
             <ProductListShow></ProductListShow> */}
           </div> 
-        </section>                    
+        {/* </section>  */}
+        {/* <section class="py-5 bg-light">
+            <div class="container px-4 px-lg-5 mt-5">
+                <h2 class="fw-bolder mb-4">Our products</h2>
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="fw-bolder">Fancy Product</h5>
+                                    $40.00 - $80.00
+                                </div>
+                            </div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>  */}
+       
       </div>
     </div> 
     );

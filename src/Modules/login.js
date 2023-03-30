@@ -26,7 +26,6 @@ const Login = () => {
 
   const handleLoginFormSubmit = async (event) => {
     event.preventDefault();
-    debugger;
     // Send the mobile number to your server for verification here
     const response = await UpdateCustomerOTP(mobileNumber);
     // alert(response);

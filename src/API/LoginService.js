@@ -16,7 +16,6 @@ async function UpdateCustomerOTP(PhoneNumber) {
   try {
     const UpdateCustomerOTPDto = { PhoneNumber : PhoneNumber  };
       const response = await axios.post(`${config.apiUrl}/user/UpdateCustomerOTP`, UpdateCustomerOTPDto);
-      debugger;
       return response.data;
   } catch (error) {
       console.error(error);
@@ -26,10 +25,8 @@ async function UpdateCustomerOTP(PhoneNumber) {
 
 async function CheckOTP(PhoneNumber , OTP ) {
   try {
-    debugger;
     const VerifyOtpDto = { PhoneNumber : PhoneNumber , OTP: OTP };
       const response = await axios.post(`${config.apiUrl}/user/CheckOTP`, VerifyOtpDto);
-      debugger;
       return response.data;
   } catch (error) {
       console.error(error);

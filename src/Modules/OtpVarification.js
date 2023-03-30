@@ -25,7 +25,6 @@ const OtpVarification = () => {
     // Send the OTP to your server for verification here
   const handleVerifyOtpFormSubmit = async(event) => {
     event.preventDefault();
-    debugger;
     const response = await CheckOTP(mobileNumber,otp);
     if(response === 'User not found.' || response === 'Invalid OTP.'){
       // Swal.fire(response)
